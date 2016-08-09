@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+
 import com.example.jamesrondina.hotify.services.PlayerIntentService;
 
 
@@ -37,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                ImageView image = (ImageView) findViewById(R.id.cena);
+                image.setVisibility(View.VISIBLE);
+
                 switch (view.getId()) {
                     case R.id.play:
                         //mp.start();
