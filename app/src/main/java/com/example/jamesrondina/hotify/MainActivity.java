@@ -1,16 +1,13 @@
 package com.example.jamesrondina.hotify;
 
 import android.content.Intent;
-import android.media.AudioManager;
-import android.media.MediaPlayer;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import com.example.jamesrondina.hotify.services.PlayerIntentService;
 
-import com.example.jamesrondina.hotify.services.PlayerService;
-
-import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }*/
 
-        final Intent intent = new Intent(MainActivity.this, PlayerService.class);
+        final Intent intent = new Intent(MainActivity.this, PlayerIntentService.class);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -67,5 +64,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        stopService(new Intent(MainActivity.this,PlayerIntentService.class));
     }
 }

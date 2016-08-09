@@ -8,7 +8,7 @@
     tools:context="com.example.jamesrondina.hotify.MainActivity">
     <ImageView
         android:id="@+id/image"
-        android:src="@android:drawable/sym_def_app_icon"
+        android:src="@mipmap/cena"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"/>
